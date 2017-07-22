@@ -1,9 +1,13 @@
+'use strict';
+
 var express   = require('express');
 var app       = express();
 
 var http      = require('http');
 var server    = http.Server(app);
 var io        = require('socket.io')(server);    
+
+var PORT      = process.env.PORT || 3000;
 
 var clients   = [];
 
@@ -51,4 +55,6 @@ io.on('connection', function(socket) {
 
 });
 
-server.listen(3000, '127.0.0.1');
+server.listen(PORT, function() {
+    console.log('Listening on port: ' + PORT);
+});

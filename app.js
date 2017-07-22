@@ -61,4 +61,5 @@ io.on('connection', function(socket) {
 
 server.listen(PORT, function() {
     console.log('Listening on port: ' + PORT);
+    console.log('Speak to me... !!!');
 });
